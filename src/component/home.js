@@ -1,7 +1,7 @@
 "use client";
 import OneSignal from 'react-onesignal';
 
-OneSignal.init({ appId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' });
+// OneSignal.init({ appId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' });
 
 
 export default function HomeComponent() {
