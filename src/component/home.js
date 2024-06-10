@@ -1,13 +1,29 @@
 "use client";
-import OneSignal from 'react-onesignal';
-
-// OneSignal.init({ appId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' });
-
+import runOneSignal from './onesignal';
+import { useEffect, useState } from 'react';
 
 export default function HomeComponent() {
-  return (
-    <div>
-      <h1>home test</h1>
-    </div>
-  )
+  const [init,setInit] = useState(false);
+  useEffect(() => {
+    if(!init) 
+    {
+      runOneSignal();
+      console.log("runOneSignal");
+      setInit(true);
+    }
+},[]);
+
+return (
+  <div className="App">
+    <h2>Test</h2>
+</div>
+)
 }
+ 
+
+
+
+
+
+
+ 
