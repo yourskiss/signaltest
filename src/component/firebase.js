@@ -11,7 +11,7 @@ const firebaseConfig = {
   appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
 const app = initializeApp(firebaseConfig);
-const getmsg = getMessaging(app);
+const messaging = getMessaging(app);
 
 
 export const fbGenrateToken  = async () => {
@@ -21,7 +21,7 @@ export const fbGenrateToken  = async () => {
     if (permission === 'granted') 
     {
       // console.log('Notification permission granted.');
-       getToken(getmsg, { vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
+       getToken(messaging, { vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
       .then((currentToken) => {
         if (currentToken) 
         {
@@ -54,7 +54,7 @@ export const fbGenrateToken  = async () => {
 
 
 export const fbDeleteToken  = async () => {
-  await deleteToken(getmsg).then(() => {
+  await deleteToken(messaging).then(() => {
     console.log('Token deleted.');
   }).catch((err) => {
     console.log('Unable to delete token. ', err);

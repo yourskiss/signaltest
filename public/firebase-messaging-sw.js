@@ -1,6 +1,9 @@
-importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
- 
+// importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
+// importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
+
+importScripts("https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/9.6.0/firebase-messaging.js");
+
 const firebaseConfig = {
     apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
     authDomain: "kerakollclub.firebaseapp.com",
@@ -11,9 +14,9 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
-const getmsg = firebase.messaging();
+const messaging = firebase.messaging();
 
-getmsg.onBackgroundMessage((payload) => {
+messaging.onBackgroundMessage((payload) => {
   console.log("Received background message ",payload);
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
@@ -23,7 +26,7 @@ getmsg.onBackgroundMessage((payload) => {
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
-// getmsg.onMessage((payload) => {
+// messaging.onMessage((payload) => {
 //     console.log('Message received. ', payload);
 //     const notificationTitle = payload.notification.title;
 //     const notificationOptions = {
