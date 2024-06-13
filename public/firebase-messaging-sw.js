@@ -67,18 +67,30 @@ firebase.initializeApp({
 
 // firebase.initializeApp(firebaseConfig);
  const messaging = firebase.messaging();
-//const messaging = async () => (await isSupported()) && firebase.messaging()
 
-messaging.onBackgroundMessage((payload) => {
-    console.log(
-        "[firebase-messaging-sw.js] Received background message ",
-        payload
-    );
+messaging.onBackgroundMessage(payload => {
+    console.log("[firebase-messaging-sw.js] Received background message ",payload);
     const notificationTitle = payload.notification.title;
     const notificationOptions = {
         body: payload.notification.body,
         icon: payload.notification.image,
     };
-
+    // self.registration.showNotification(payload.notification.title, { body: payload.notification.body })
     self.registration.showNotification(notificationTitle, notificationOptions);
+});
+
+ 
+self.addEventListener('message', e => {
+  // Handle incoming messages from the main appliation
+  const {  data } = e.data;
+
+  //if(type === 'showNotification') {
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: payload.notification.image
+    });
+    
+    // Add toast notification
+    self.registration.showNotification(data.title);
+ // }
 });
