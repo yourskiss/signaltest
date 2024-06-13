@@ -1,6 +1,6 @@
  
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken, deleteToken  } from "firebase/messaging";
+import { getMessaging, getToken, deleteToken, isSupported  } from "firebase/messaging";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
@@ -11,8 +11,8 @@ const firebaseConfig = {
   appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
 const app = initializeApp(firebaseConfig);
-const messaging = getMessaging(app);
-
+// const messaging = getMessaging(app);
+const messaging = async () => (await isSupported()) && getMessaging(app)
 
 export const fbGenrateToken  = async () => {
    console.log('Request notification permission');

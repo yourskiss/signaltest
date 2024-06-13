@@ -66,7 +66,8 @@ firebase.initializeApp({
 });
 
 // firebase.initializeApp(firebaseConfig);
-const messaging = firebase.messaging();
+ const messaging = firebase.messaging();
+//const messaging = async () => (await isSupported()) && firebase.messaging()
 
 messaging.onBackgroundMessage((payload) => {
     console.log(
