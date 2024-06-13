@@ -1,29 +1,22 @@
 "use client";
-import runOneSignal from './onesignal';
-import { useEffect, useState } from 'react';
+import  { useEffect } from 'react';
+import { fbGenrateToken } from './firebase';
 
-export default function HomeComponent() {
-  const [init,setInit] = useState(false);
+ 
+function HomeComponent() {
+
+
   useEffect(() => {
-    if(!init) 
-    {
-      runOneSignal();
-      console.log("runOneSignal");
-      setInit(true);
-    }
-},[]);
+    fbGenrateToken();
+  }, []);
 
-return (
-  <div className="App">
-    <h2>Test</h2>
-</div>
-)
+
+
+  return (
+    <div className="App">
+      <span>Send Notification</span>
+    </div>
+  );
 }
- 
 
-
-
-
-
-
- 
+export default HomeComponent;
