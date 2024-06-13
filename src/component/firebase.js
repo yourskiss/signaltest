@@ -10,9 +10,9 @@ const firebaseConfig = {
   messagingSenderId: "461938643762",
   appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
-const app = initializeApp(firebaseConfig);
-const messaging = getMessaging();
- console.log("text", messaging);
+export const app = initializeApp(firebaseConfig);
+export const messaging = getMessaging(app);
+// console.log("text", messaging);
  
 export const fbGenrateToken  = async () => {
    console.log('Request notification permission');
@@ -51,8 +51,6 @@ export const fbGenrateToken  = async () => {
 }
 
  
-
  
-
 
  
