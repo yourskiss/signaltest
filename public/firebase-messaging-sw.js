@@ -1,5 +1,8 @@
-importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js');
+// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js');
+// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging-compat.js');
+
+importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
 importScripts('/service-worker.js')
 
 firebase.initializeApp({
