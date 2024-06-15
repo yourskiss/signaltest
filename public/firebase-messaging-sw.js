@@ -1,5 +1,7 @@
-importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging-compat.js');
+importScripts('/service-worker.js')
+
 firebase.initializeApp({
     apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
     authDomain: "kerakollclub.firebaseapp.com",

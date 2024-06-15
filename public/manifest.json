@@ -1,25 +1,68 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+      "id":"1",
+      "name": "test name",
+      "short_name": "test",
+      "start_url": "/",
+      "display": "standalone",
+      "orientation": "portrait",
+      "scope": "/",
+      "background_color": "#141414",
+      "theme_color": "#000000",
+      "description": "Get our app. It won't take up space on your phone.",
+      "icons": [
+          {
+            "src": "/icons/icon-72x72.png",
+            "type": "image/png", 
+            "sizes": "72x72",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-96x96.png",
+            "type": "image/png", 
+            "sizes": "96x96",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-128x128.png",
+            "type": "image/png",
+            "sizes": "128x128",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-144x144.png",
+            "type": "image/png", 
+            "sizes": "144x144",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-192x192.png",
+            "type": "image/png", 
+            "sizes": "192x192",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-384x384.png",
+            "type": "image/png", 
+            "sizes": "384x384",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/icon-512x512.png",
+            "type": "image/png", 
+            "sizes": "512x512",
+            "purpose": "any"
+          },
+          {
+            "src": "/icons/maskable-192x192.png",
+            "type": "image/png", 
+            "sizes": "192x192",
+            "purpose": "maskable"
+          },
+          {
+            "src": "/icons/maskable-512x512.png",
+            "type": "image/png", 
+            "sizes": "512x512",
+            "purpose": "maskable"
+          }
+        ]
 }
