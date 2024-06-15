@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getMessaging, getToken  } from "firebase/messaging";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_apiKey,
-  authDomain: process.env.NEXT_PUBLIC_API_authDomain,
-  projectId: process.env.NEXT_PUBLIC_API_projectId,
-  storageBucket: process.env.NEXT_PUBLIC_API_storageBucket,
-  messagingSenderId: process.env.NEXT_PUBLIC_API_messagingSenderId,
-  appId: process.env.NEXT_PUBLIC_API_appId
+  apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
+  authDomain: "kerakollclub.firebaseapp.com",
+  projectId: "kerakollclub",
+  storageBucket: "kerakollclub.appspot.com",
+  messagingSenderId: "461938643762",
+  appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
 export const app = initializeApp(firebaseConfig);
 export const messaging = getMessaging(app);
