@@ -1,13 +1,14 @@
-// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js');
-// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging-compat.js');
+ 
+importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js');
 
 // importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
 // importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
 
 
-importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
-self.importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging-sw.js');
+// importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
+// importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
+ 
 
 importScripts('/service-worker.js')
 
@@ -29,7 +30,7 @@ messaging.onBackgroundMessage((payload) => {
         body: payload.notification.body,
         icon: payload.notification.image,
     };
-     registration.showNotification(notificationTitle, notificationOptions);
+    self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
  

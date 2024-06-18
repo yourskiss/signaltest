@@ -5,6 +5,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/messaging";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
   authDomain: "kerakollclub.firebaseapp.com",
