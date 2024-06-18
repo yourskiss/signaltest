@@ -1,8 +1,13 @@
- importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js');
- importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging-compat.js');
+// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js');
+// importScripts('https://www.gstatic.com/firebasejs/9.1.2/firebase-messaging-compat.js');
 
-// importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
-// importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
+ importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
+ importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
+
+
+//importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
+//importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
+
 importScripts('/service-worker.js')
 
 firebase.initializeApp({
@@ -16,7 +21,7 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 
-messaging.onBackgroundMessage(payload => {
+messaging.onBackgroundMessage((payload) => {
     console.log("[firebase-messaging-sw.js] Received background message ",payload);
     const notificationTitle = payload.notification.title;
     const notificationOptions = {

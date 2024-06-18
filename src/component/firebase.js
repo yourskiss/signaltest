@@ -1,6 +1,9 @@
  
-import { initializeApp } from "firebase/app";
-import { getMessaging, getToken  } from "firebase/messaging";
+// import { initializeApp } from "firebase/app";
+// import { getMessaging, getToken  } from "firebase/messaging";
+ 
+import firebase from "firebase/compat/app";
+import "firebase/compat/messaging";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
@@ -10,9 +13,12 @@ const firebaseConfig = {
   messagingSenderId: "461938643762",
   appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
-export const app = initializeApp(firebaseConfig);
-export const messaging = getMessaging(app); 
+//export const app = initializeApp(firebaseConfig);
+//export const messaging = getMessaging(app); 
+
  
+firebase.initializeApp(firebaseConfig);
+export const messaging = firebase.messaging();
  
 export const fbGenrateToken  = async () => {
    console.log('Request notification permission');
@@ -21,20 +27,32 @@ export const fbGenrateToken  = async () => {
     if (permission === 'granted') 
     {
       // console.log('Notification permission granted.');
-       getToken(messaging, { vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
+
+      messaging.getToken({ vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
       .then((currentToken) => {
-        if (currentToken) 
-        {
+        if (currentToken) {
           console.log('currentToken-', currentToken);
-        } 
-        else 
-        {
+        } else {
           console.log('No registration token available. Request permission to generate one.');
         }
-      })
-      .catch((err) => {
+      }).catch((err) => {
         console.log('An error occurred while retrieving token. ', err);
       });
+
+      //  getToken(messaging, { vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
+      // .then((currentToken) => {
+      //   if (currentToken) 
+      //   {
+      //     console.log('currentToken-', currentToken);
+      //   } 
+      //   else 
+      //   {
+      //     console.log('No registration token available. Request permission to generate one.');
+      //   }
+      // })
+      // .catch((err) => {
+      //   console.log('An error occurred while retrieving token. ', err);
+      // });
     }
     else if (permission === 'denied') 
     { 
