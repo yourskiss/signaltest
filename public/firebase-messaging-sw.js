@@ -19,27 +19,17 @@ firebase.initializeApp({
 });
 const messaging = firebase.messaging();
 
-self.addEventListener('push', event => {
-    const data = event.data.json();  
-    const title= data.title;
-    const options = {
-      body: data.body,
-      icon: '/path/to/your/icon.png',
-      data: {url: data.link, },
-    };
-  
-    event.waitUntil(self.registration.showNotification(title, options));
-  });
+ 
 
-messaging.onBackgroundMessage((payload) => {
-    console.log("[firebase-messaging-sw.js] Received background message ",payload);
-    const notificationTitle = payload.notification.title;
-    const notificationOptions = {
-        body: payload.notification.body,
-        icon: payload.notification.image,
-    };
-    self.registration.showNotification(notificationTitle, notificationOptions);
-});
+// messaging.onBackgroundMessage((payload) => {
+//     console.log("[firebase-messaging-sw.js] Received background message ",payload);
+//     const notificationTitle = payload.notification.title;
+//     const notificationOptions = {
+//         body: payload.notification.body,
+//         icon: payload.notification.image,
+//     };
+//     self.registration.showNotification(notificationTitle, notificationOptions);
+// });
 
 
   
