@@ -2,10 +2,7 @@
 importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js');
 
-// importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js');
-// importScripts('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
-
-
+ 
 // importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
 // importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
  
@@ -22,6 +19,17 @@ firebase.initializeApp({
 });
 const messaging = firebase.messaging();
 
+self.addEventListener('push', event => {
+    const data = event.data.json();  
+    const title= data.title;
+    const options = {
+      body: data.body,
+      icon: '/path/to/your/icon.png',
+      data: {url: data.link, },
+    };
+  
+    event.waitUntil(self.registration.showNotification(title, options));
+  });
 
 messaging.onBackgroundMessage((payload) => {
     console.log("[firebase-messaging-sw.js] Received background message ",payload);
@@ -33,6 +41,8 @@ messaging.onBackgroundMessage((payload) => {
     self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
+
+  
  
 // self.addEventListener('message', e => {
 //   // Handle incoming messages from the main appliation
