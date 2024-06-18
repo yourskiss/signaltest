@@ -7,6 +7,7 @@
 
 importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
+self.importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-sw.js');
 
 importScripts('/service-worker.js')
 
@@ -28,7 +29,7 @@ messaging.onBackgroundMessage((payload) => {
         body: payload.notification.body,
         icon: payload.notification.image,
     };
-    return self.registration.showNotification(notificationTitle, notificationOptions);
+     registration.showNotification(notificationTitle, notificationOptions);
 });
 
  
