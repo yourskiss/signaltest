@@ -11,8 +11,8 @@ const firebaseConfig = {
   appId: "1:461938643762:web:d743846ce4b8024ff9bd2b"
 };
 export const app = initializeApp(firebaseConfig);
-export const messaging = getMessaging(app);
-// console.log("text", messaging);
+export const messaging = getMessaging(app); 
+ 
  
 export const fbGenrateToken  = async () => {
    console.log('Request notification permission');
@@ -21,7 +21,7 @@ export const fbGenrateToken  = async () => {
     if (permission === 'granted') 
     {
       // console.log('Notification permission granted.');
-       getToken(messaging, { vapidKey: process.env.NEXT_PUBLIC_API_vapidKey })
+       getToken(messaging, { vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
       .then((currentToken) => {
         if (currentToken) 
         {
