@@ -1,17 +1,12 @@
- 
-/*
 const assets = [
-  "/",
-  "/assets/fonts/",
-  "/assets/css/",
-  "/assets/images/",
+  "/assets/images/QR.png",
+  "/assets/images/logo.png",
 ]
-*/
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("devkerakoll").then((cache) => {
-      return cache.addAll(["/"]);
+      return cache.addAll(assets);
     })
   );
 });

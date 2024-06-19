@@ -12,20 +12,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export const messaging = firebase.messaging();
-
-const getToken = () =>
-{
-  messaging.getToken({ vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
-    .then((currentToken) => {
-      if (currentToken) {
-        console.log('currentToken-', currentToken);
-      } else {
-        console.log('No registration token available. Request permission to generate one.');
-      }
-    }).catch((err) => {
-      console.log('An error occurred while retrieving token. ', err);
-    });
-}
+ 
  
 export const fbGenrateToken  = async () => {
    console.log('Request notification permission');
@@ -34,7 +21,16 @@ export const fbGenrateToken  = async () => {
     if (permission === 'granted') 
     {
       // console.log('Notification permission granted.');
-      getToken();
+      messaging.getToken({ vapidKey: 'BNaeeHgVbVSrg2DVp5ax0ePmDky3df8GlZNVuslGIEYsYPSEofPFOkaYcp9OsL9lUKIzaStorWmBCrmCXU6HWxQ' })
+      .then((currentToken) => {
+        if (currentToken) {
+          console.log('currentToken-', currentToken);
+        } else {
+          console.log('No registration token available. Request permission to generate one.');
+        }
+      }).catch((err) => {
+        console.log('An error occurred while retrieving token. ', err);
+      });
     }
     else if (permission === 'denied') 
     { 

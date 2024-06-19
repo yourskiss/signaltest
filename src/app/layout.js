@@ -1,4 +1,5 @@
 import "./globals.css";
+import ServiceRegister from "@/component/register-sw";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+            <meta name="background_color" content="#141414"/>
+            <meta name="theme-color" content="#000000"/>
+      <body>
+        {children}
+        <ServiceRegister />
+      </body>
     </html>
   );
 }

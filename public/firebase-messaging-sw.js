@@ -4,7 +4,7 @@ importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compa
 //  importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js');
 //  importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js');
  
-// importScripts('/service-worker.js')
+
 
 firebase.initializeApp({
     apiKey: "AIzaSyBLnmGOHSGiiYVV_rEiGk6QZdGccoMB5GE",
